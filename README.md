@@ -10,9 +10,9 @@ Simple Python flask server that exposes request information and environment vars
 
 - `/anything` - Reports request information (like the  Kenneth Reitz httpbin.org project)
 - `/env` - Reports environment variables from container
-- `/all` - Reports request informatioin and environment environment
+- `/all` - Reports request information and environment variables
 
-In addition some troubleshooting tools are already present like: `curl`, `jq`, `nslookup`, `dig`, `tcpdump`, `netstat`, `lsof`, `tcpdump`.
+In addition, some troubleshooting tools have been installed like: `curl`, `jq`, `nslookup`, `dig`, `tcpdump`, `netstat`, `lsof`, `tcpdump`.
 
 
 ## Run in Docker
@@ -20,7 +20,7 @@ In addition some troubleshooting tools are already present like: `curl`, `jq`, `
 ```
 docker run -p 10080:80 -e MY_VAR="Hello" gforns/httpenv
 ```
-You can access envrionemtn variables with `curl`
+You can access environment variables with `curl`
 ```
 curl --silent  localhost:10080/all | jq .env.MY_VAR
 "Hello"

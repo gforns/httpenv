@@ -93,7 +93,7 @@ spec:
 
 
 ## Kubernetes downward API
-This image let's expose information from the K8s downward API:
+This image can be used to expose information from the K8s downward API:
 https://kubernetes.io/docs/concepts/workloads/pods/downward-api/
 
 ```

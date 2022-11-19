@@ -1,5 +1,5 @@
 FROM python:3.6
-RUN apt-get update && apt-get install -y net-tools curl lsof dnsutils tcpdump bind9-utils jq
+RUN apt-get update && apt-get install -y net-tools curl lsof dnsutils tcpdump bind9-utils jq telnet
 COPY . /app
 WORKDIR /app
 RUN pip install -r requirements.txt

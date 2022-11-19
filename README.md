@@ -6,23 +6,31 @@ Simple Python flask server that exposes request information and environment vars
 - https://github.com/gforns/httpenv
 
 
-3 routes are available:
+5 routes are available:
 
+- `/` - Reports content of the `MYSERVICE` envvar
 - `/anything` - Reports request information (like the  Kenneth Reitz httpbin.org project)
 - `/env` - Reports environment variables from container
 - `/all` - Reports request information and environment variables
+- `/delay/<n>` - Reports request information and environment variables but after a delay of `n` seconds.
 
-In addition, some troubleshooting tools have been installed like: `curl`, `jq`, `nslookup`, `dig`, `tcpdump`, `netstat`, `lsof`, `tcpdump`.
+In addition, some troubleshooting tools have been installed like: `curl`, `jq`, `nslookup`, `dig`, `tcpdump`, `netstat`, `lsof`, `tcpdump`, `telnet`.
 
 
 ## Run in Docker
 
+By default the service will print the envvar `MYSERVICE`:
 ```
-docker run -p 10080:80 -e MY_VAR="Hello" gforns/httpenv
+docker run -p 10080:80 -e MYSERVICE="Hello" gforns/httpenv
 ```
-You can access environment variables with `curl`
+You can get into the service using  `curl`
 ```
-curl --silent  localhost:10080/all | jq .env.MY_VAR
+curl localhost:10080
+HTTPenv running on 'Hello' (browse '/help' to show more options)
+```
+You can also use the other enpoints to get the vars
+```
+curl --silent  localhost:10080/all | jq .env.MYSERVICE
 "Hello"
 ```
 

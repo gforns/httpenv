@@ -4,6 +4,7 @@ COPY . /app
 WORKDIR /app
 RUN pip install -r requirements.txt
 ENV PORT=80
+ENV SSL=False
 ENTRYPOINT ["python"]
 CMD ["app.py"]
 EXPOSE 80

@@ -17,6 +17,16 @@ Simple Python flask server that exposes request information and environment vars
 In addition, some troubleshooting tools have been installed like: `curl`, `jq`, `nslookup`, `dig`, `tcpdump`, `netstat`, `lsof`, `tcpdump`, `telnet`.
 
 
+## Configuration
+
+You can configure via environment vars `PORT` and `SSL` the port and if we want to use adhoc TLS termination.
+```
+PORT: tcp port where Flask will run (defalt 80)
+SSL: Boolean to exposr PORT as https  (default False)
+```
+
+
+
 ## Run in Docker
 
 By default the service will print the envvar `MYSERVICE`:

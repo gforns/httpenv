@@ -72,9 +72,9 @@ def delay(seconds):
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
-    ssl = bool(os.environ.get("SSL", False))
+    ssl = os.environ.get("SSL")
 
-    if ssl:
+    if ssl and ssl != "False":
         app.run(debug=False,host='0.0.0.0',port=port, ssl_context='adhoc')
     else:    
         app.run(debug=False,host='0.0.0.0',port=port)

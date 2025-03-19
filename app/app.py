@@ -32,7 +32,7 @@ def anything():
     a['headers'] = dict(request.headers)
     a['args'] = dict(request.args)
     a['form'] = dict(request.form)
-    a['json'] = request.json
+    a['json'] = request.get_json(silent=True)
     a['method'] = request.method
     a['origin'] = request.origin
     a['url'] = request.url
@@ -44,7 +44,7 @@ def all():
     a['headers'] = dict(request.headers)
     a['args'] = dict(request.args)
     a['form'] = dict(request.form)
-    a['json'] = request.json
+    a['json'] = request.get_json(silent=True)
     a['method'] = request.method
     a['origin'] = request.origin
     a['url'] = request.url
@@ -62,7 +62,7 @@ def delay(seconds):
     a['headers'] = dict(request.headers)
     a['args'] = dict(request.args)
     a['form'] = dict(request.form)
-    a['json'] = request.json
+    a['json'] = request.get_json(silent=True)
     a['method'] = request.method
     a['origin'] = request.origin
     a['url'] = request.url

@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROM python:3.12.12-slim
 RUN apt-get update && apt-get install -y procps openssh-client net-tools curl lsof dnsutils tcpdump bind9-utils jq telnet vim netcat-traditional less nmap
 COPY ./app /app
 WORKDIR /app
